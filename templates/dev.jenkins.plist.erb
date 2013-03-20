@@ -18,7 +18,7 @@
     <array>
       <string>/usr/bin/java</string>
       <string>-jar</string>
-      <string>#{opt_prefix}/libexec/jenkins.war</string>
+      <string><%= scope.lookupvar "jenkins::config::warfile" %></string>
       <string>--httpListenAddress=127.0.0.1</string>
       <string>--httpPort=<%= scope.lookupvar "jenkins::config::port" %></string>
       <string>--logfile=<%= scope.lookupvar "jenkins::config::logfile" %></string>

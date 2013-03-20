@@ -18,7 +18,7 @@ class jenkins {
     notify => Service['dev.jenkins']
   }
 
-  files { '/Library/LaunchDaemons/dev.jenkins.plist':
+  file { '/Library/LaunchDaemons/dev.jenkins.plist':
     content => template('jenkins/dev.jenkins.plist.erb'),
     group   => 'wheel',
     notify  => Service['dev.jenkins'],
