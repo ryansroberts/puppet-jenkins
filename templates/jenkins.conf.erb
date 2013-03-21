@@ -3,8 +3,8 @@ upstream jenkins.dev {
 }
 
 server {
-  access_log <%= scope.lookupvar "jenkins::config::accesslogfile" %>
-  error_log <%= scope.lookupvar "jenkins::config::errorlogfile" %>
+  access_log <%= scope.lookupvar "jenkins::config::accesslogfile" %>;
+  error_log <%= scope.lookupvar "jenkins::config::errorlogfile" %>;
   listen 80;
   server_name jenkins.dev;
 
