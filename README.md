@@ -1,23 +1,24 @@
-# Template Puppet Module for Boxen
+# Jenkins Puppet Module for Boxen
 
-An example of how we write Puppet modules for Boxen. Replace this
-paragraph with a short explanation of what the heck makes your module
-useful.
+This installs the [Jenkins CI-server](http://jenkins-ci.org) on your machine.
 
 ## Usage
 
 ```puppet
-boxen::example { 'best example ever':
-  salutation => 'fam'
-}
+include jenkins
 ```
+
+Browse to [http://jenkins.dev](http://jenkins.dev).
 
 ## Required Puppet Modules
 
 * `boxen`
-* `anything-else`
+* `homebrew`
+* `nginx`
 
-## Development
+## Environment
 
-Write code. Run `script/cibuild` to test it. Check the `script`
-directory for other useful tools.
+Once installed, you can access the following variables in your environment, projects, etc:
+
+* BOXEN_JENKINS_PORT: The port on which Jenkins listens
+* BOXEN_JENKINS_HOME: The Jenkins home-directory
