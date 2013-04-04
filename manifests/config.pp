@@ -13,4 +13,6 @@ class jenkins::config {
   $accesslogfile = "${nginx::config::logdir}/jenkins.access.log"
   $errorlogfile  = "${nginx::config::logdir}/jenkins.error.log"
   $port          = 18080
+  $max_heap_size = "512MB"
+  $max_perm_size = "256MB"
 }
