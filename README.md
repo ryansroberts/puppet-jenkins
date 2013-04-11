@@ -12,13 +12,22 @@ Browse to [http://jenkins.dev](http://jenkins.dev).
 
 ### Options
 
-You can set optional `$jenkins_max_heap_size` and `$jenkins_max_perm_size` vars to control heap and permgen sizes
+You can set optional `$jenkins_max_heap_size` and `$jenkins_max_perm_size` vars in `site.pp` to control heap and permgen sizes
 in Jenkins Java VM via [java command line arguments](https://wiki.jenkins-ci.org/display/JENKINS/Starting+and+Accessing+Jenkins):
 
 ```puppet
-$jenkins_max_heap_size = "6G"
-$jenkins_max_perm_size = "512M"
-include jenkins
+node 'myhostname.local' {
+  # core modules, needed for most things
+  include dnsmasq
+  …
+
+  # jenkins
+  $jenkins_max_heap_size = "6G"
+  $jenkins_max_perm_size = "512M"
+  include jenkins
+
+  …
+}
 ```
 
 ## Required Puppet Modules
