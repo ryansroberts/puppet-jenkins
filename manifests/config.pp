@@ -6,6 +6,7 @@ class jenkins::config {
   $configdir     = "${boxen::config::configdir}/jenkins"
   $configfile    = "${configdir}/jenkins.conf"
   $datadir       = "${boxen::config::datadir}/jenkins"
+  $pluginsdir    = "${datadir}/plugins"
   $warfile       = "${homebrew::config::installdir}/opt/jenkins/libexec/jenkins.war"
   $logdir        = "${boxen::config::logdir}/jenkins"
   $logfile       = "${logdir}/jenkins.log"
