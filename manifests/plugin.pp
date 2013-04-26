@@ -16,10 +16,15 @@ define jenkins::plugin (
         fail('cannot ensure present without version attribute')
       }
 
+      file { $pluginsdir:
+        ensure => directory,
+      }
+
       $version_regex = regsubst($version, '\.', '\\.')
       exec { "${plugin} v${version}":
         command => "curl -fsSL -o ${pluginfile} ${downloads}${plugin}/${version}/${plugin}.hpi",
         unless  => "java -jar ${clijar} -s http://jenkins.dev/ list-plugins ${plugin} |grep -qE '${version_regex}( \\(.*\\))?$'",
+        require => File[$pluginsdir],
         notify  => Service['dev.jenkins'],
       }
     } # end present
