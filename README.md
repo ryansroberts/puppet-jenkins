@@ -1,5 +1,7 @@
 # Jenkins Puppet Module for Boxen
 
+[![Build Status](https://travis-ci.org/boxen/puppet-jenkins.png?branch=master)](https://travis-ci.org/boxen/puppet-jenkins)
+
 This installs the [Jenkins CI-server](http://jenkins-ci.org) on your machine.
 
 ## Usage
