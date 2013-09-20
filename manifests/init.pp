@@ -16,7 +16,7 @@ class jenkins {
   }
 
   package { 'boxen/brews/jenkins':
-    ensure => '1.502-boxen1',
+    ensure => '1.503-boxen1',
     notify => Service['dev.jenkins']
   }
 
