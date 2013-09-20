@@ -12,6 +12,7 @@ class jenkins {
   file { [
     $jenkins::config::configdir,
     $jenkins::config::logdir,
+    $jenkins::config::datadir,
     $jenkins::config::pluginsdir
   ]:
     ensure => directory,
