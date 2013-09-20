@@ -24,7 +24,8 @@ define jenkins::plugin (
       }
 
       file { $pluginsdir:
-        ensure => directory,
+        ensure  => directory,
+        require => Service['dev.jenkins']
       }
 
       $version_regex = regsubst($version, '\.', '\\.')
@@ -32,7 +33,7 @@ define jenkins::plugin (
         command => "curl -fsSL -o ${pluginfile} ${downloads}${plugin}/${version}/${plugin}.hpi",
         unless  => "java -jar ${clijar} -s http://jenkins.dev/ list-plugins ${plugin} |grep -qE '${version_regex}( \\(.*\\))?$'",
         require => File[$pluginsdir],
-        notify  => Service['dev.jenkins'],
+        notify  => Service['dev.jenkins']
       }
     } # end present
 
@@ -41,7 +42,7 @@ define jenkins::plugin (
         ensure => absent,
         backup => false,
         force  => true,
-        notify => Service['dev.jenkins'],
+        notify => Service['dev.jenkins']
       }
     } # end default
   }
