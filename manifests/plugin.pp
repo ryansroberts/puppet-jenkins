@@ -23,11 +23,6 @@ define jenkins::plugin (
         fail('cannot ensure present without version attribute')
       }
 
-      file { $pluginsdir:
-        ensure  => directory,
-        require => Service['dev.jenkins']
-      }
-
       $version_regex = regsubst($version, '\.', '\\.')
       exec { "${plugin} v${version}":
         command => "curl -fsSL -o ${pluginfile} ${downloads}${plugin}/${version}/${plugin}.hpi",
