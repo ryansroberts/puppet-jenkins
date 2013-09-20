@@ -1,3 +1,8 @@
+# Internal: Configuration settings for Jenkins
+#
+# Examples:
+#
+#   include jenkins::config
 class jenkins::config {
   require boxen::config
   require homebrew::config
@@ -14,6 +19,6 @@ class jenkins::config {
   $accesslogfile = "${nginx::config::logdir}/jenkins.access.log"
   $errorlogfile  = "${nginx::config::logdir}/jenkins.error.log"
   $port          = 18080
-  $max_heap_size = $jenkins_max_heap_size
-  $max_perm_size = $jenkins_max_perm_size
+  $max_heap_size = $::jenkins_max_heap_size
+  $max_perm_size = $::jenkins_max_perm_size
 }

@@ -1,3 +1,8 @@
+# Public: Installs the Jenkins CI-server
+#
+# Examples
+#
+#   include jenkins
 class jenkins {
   include jenkins::config
   include homebrew

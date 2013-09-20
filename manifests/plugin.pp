@@ -1,3 +1,10 @@
+# Public: Install a Jenkins plugin
+#
+# Examples
+#
+#   jenkins::plugin { 'notification':
+#      version => '1.4'
+#   }
 define jenkins::plugin (
   $ensure = present,
   $plugin = $title,
@@ -5,7 +12,7 @@ define jenkins::plugin (
 ) {
   include jenkins::config
 
-  $downloads  = "http://updates.jenkins-ci.org/download/plugins/"
+  $downloads  = 'http://updates.jenkins-ci.org/download/plugins/'
   $pluginsdir = $jenkins::config::pluginsdir
   $pluginfile = "${pluginsdir}/${plugin}.jpi"
   $clijar = "${jenkins::config::datadir}/war/WEB-INF/jenkins-cli.jar"
