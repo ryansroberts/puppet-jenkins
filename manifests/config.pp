@@ -3,7 +3,7 @@
 # Examples:
 #
 #   include jenkins::config
-class jenkins::config {
+class jenkins::config ($heap_size = '2G', $perm_size = '512M') {
   require boxen::config
   require homebrew::config
   require nginx::config
@@ -19,6 +19,6 @@ class jenkins::config {
   $accesslogfile = "${nginx::config::logdir}/jenkins.access.log"
   $errorlogfile  = "${nginx::config::logdir}/jenkins.error.log"
   $port          = 18080
-  $max_heap_size = $jenkins_max_heap_size
-  $max_perm_size = $jenkins_max_perm_size
+  $max_heap_size = $heap_size
+  $max_perm_size = $perm_size
 }

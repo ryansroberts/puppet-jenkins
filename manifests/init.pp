@@ -3,8 +3,11 @@
 # Examples
 #
 #   include jenkins
-class jenkins {
-  include jenkins::config
+class jenkins ($max_heap_size = '2G', $max_perm_size = '512M') {
+  class { 'jenkins::config':
+    heap_size => $max_heap_size,
+    perm_size => $max_perm_size
+  }
   include homebrew
   include nginx::config
   include nginx
