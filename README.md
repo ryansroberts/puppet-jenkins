@@ -2,6 +2,8 @@
 
 This installs the [Jenkins CI-server](http://jenkins-ci.org) on your machine.
 
+[![Build Status](https://travis-ci.org/bilke/puppet-jenkins.png?branch=master)](https://travis-ci.org/bilke/puppet-jenkins)
+
 ## Usage
 
 ```puppet
@@ -30,11 +32,30 @@ node 'myhostname.local' {
 }
 ```
 
+### Plugins
+
+Installing:
+
+```puppet
+jenkins::plugin { 'notification':
+   version => '1.4'
+}
+```
+
+Removing:
+
+```puppet
+jenkins::plugin { 'notification':
+   ensure => absent
+}
+```
+
 ## Required Puppet Modules
 
 * `boxen`
 * `homebrew`
 * `nginx`
+* `repository`
 
 ## Environment
 
