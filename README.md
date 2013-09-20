@@ -4,8 +4,6 @@
 
 This installs the [Jenkins CI-server](http://jenkins-ci.org) on your machine.
 
-[![Build Status](https://travis-ci.org/bilke/puppet-jenkins.png?branch=master)](https://travis-ci.org/bilke/puppet-jenkins)
-
 ## Usage
 
 ```puppet
