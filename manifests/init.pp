@@ -26,7 +26,7 @@ class jenkins ($max_heap_size = '2G', $max_perm_size = '512M') {
   }
 
   package { 'boxen/brews/jenkins':
-    ensure => '1.503-boxen1',
+    ensure => '1.503-boxen2',
     notify => Service['dev.jenkins']
   }
 
