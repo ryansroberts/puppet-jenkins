@@ -34,8 +34,8 @@ server {
 server {
   access_log <%= scope.lookupvar "jenkins::config::accesslogfile" %>;
   error_log <%= scope.lookupvar "jenkins::config::errorlogfile" %>;
-  listen <%= fqdn %>:<%= scope.lookupvar "jenkins::config::port" %>;
-  server_name <%= fqdn %>;
+  listen <%= @fqdn %>:<%= scope.lookupvar "jenkins::config::port" %>;
+  server_name <%= @fqdn %>;
 
   location / {
     proxy_buffering          off;
