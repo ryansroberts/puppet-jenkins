@@ -34,7 +34,7 @@ server {
 server {
   access_log <%= scope.lookupvar "jenkins::config::accesslogfile" %>;
   error_log <%= scope.lookupvar "jenkins::config::errorlogfile" %>;
-  listen <%= hostname %>:18080;
+  listen <%= hostname %>:<%= scope.lookupvar "jenkins::config::port" %>;
   server_name <%= hostname %>;
 
   location / {
