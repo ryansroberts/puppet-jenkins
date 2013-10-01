@@ -29,3 +29,23 @@ server {
     proxy_pass   http://jenkins;
   }
 }
+
+<% if scope.lookupvar "jenkins::config::public_port" %>
+server {
+  access_log <%= scope.lookupvar "jenkins::config::accesslogfile" %>;
+  error_log <%= scope.lookupvar "jenkins::config::errorlogfile" %>;
+  listen <%= hostname %>:18080;
+  server_name <%= hostname %>;
+
+  location / {
+    proxy_buffering          off;
+    proxy_max_temp_file_size 0;
+    proxy_redirect           off;
+
+    proxy_set_header         X-Real-IP  $remote_addr;
+    proxy_set_header         X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header         Host $http_host;
+    proxy_pass http://jenkins/;
+  }
+}
+<% end %>
