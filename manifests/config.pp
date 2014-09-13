@@ -3,7 +3,11 @@
 # Examples:
 #
 #   include jenkins::config
-class jenkins::config ($heap_size = '2G', $perm_size = '512M', $public = false) {
+class jenkins::config (
+  $heap_size = '2G',
+  $perm_size = '512M',
+  $public = false
+) {
   require boxen::config
   require homebrew::config
   require nginx::config
