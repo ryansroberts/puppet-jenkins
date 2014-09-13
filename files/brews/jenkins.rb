@@ -2,9 +2,9 @@ require 'formula'
 
 class Jenkins < Formula
   homepage 'http://jenkins-ci.org'
-  url 'https://s3.amazonaws.com/boxen-downloads/jenkins/1.509.3/jenkins.war'
-  sha1 'a305d42e62b4daa8f2a6196371dfe389c75a7e22'
-  version '1.509.3-boxen1'
+  url 'https://s3.amazonaws.com/boxen-downloads/jenkins/1.565.2/jenkins.war'
+  sha1 'f14b4479236df26b1b4fdd26c2256c296bab1a2e'
+  version '1.565.2-boxen1'
 
   skip_clean :all
 
