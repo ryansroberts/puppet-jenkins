@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe 'jenkins' do
   let(:facts) do
     {
@@ -8,11 +9,11 @@ describe 'jenkins' do
   end
 
   it do
-    should include_class('jenkins::config')
+    should contain_class('jenkins::config')
 
-    should include_class('homebrew')
+    should contain_class('homebrew')
 
-    should include_class('nginx')
+    should contain_class('nginx')
 
     should contain_package('boxen/brews/jenkins')
 

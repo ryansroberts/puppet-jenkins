@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe 'jenkins::plugin' do
   let(:facts) do
     {
@@ -11,6 +12,6 @@ describe 'jenkins::plugin' do
   let(:params) { { :version => '1.4' } }
 
   it do
-    should include_class('jenkins::config')
+    should contain_class('jenkins::config')
   end
 end
