@@ -32,7 +32,7 @@ class jenkins (
   }
 
   package { 'boxen/brews/jenkins':
-    ensure => '1.580.3-boxen1',
+    ensure => 'latest-boxen1',
     notify => Service['dev.jenkins']
   }
 
